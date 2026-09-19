@@ -8,6 +8,27 @@
     "reviewRequired": true,
     "approvalTarget": "Research/Approved/Overworld_Farming_Yield_Study_v1.json"
   },
+  "projectContinuity": {
+    "repository": "mkmulla19-boop/olomu-project-face2",
+    "projectPhase": "Research and design validation",
+    "unityImplementation": "Not authorized",
+    "workingMethod": "Work one file at a time. Keep research documents in Research/. Do not create Unity code, scenes, prefabs, ScriptableObjects, or gameplay implementation.",
+    "savedFiles": {
+      "README.md": "Project entry point.",
+      "Development/UNITY_AI_INSTRUCTIONS.md": "Instructions and restrictions for future Unity and AI development.",
+      "Research/Approved/Scarcity_Config_v3.3.json": "Approved scarcity, durability, survival, and resource configuration.",
+      "Research/Approved/Economy_Loop_Study_v1.json": "Approved-for-design economy and player-loop sustainability study; unresolved balance inputs remain deferred.",
+      "Research/Approved/AI_Handoff_Note.md": "Continuity instructions, current project state, verified findings, unresolved questions, and next-study order.",
+      "Research/Overworld_Farming_Yield_Study_v1.json": "This current draft, awaiting external review and not yet approved."
+    },
+    "authoritativeOrder": [
+      "Research/Approved/Scarcity_Config_v3.3.json",
+      "Research/Approved/Economy_Loop_Study_v1.json",
+      "Research/Overworld_Farming_Yield_Study_v1.json",
+      "Research/Approved/Death_Recovery_Finalization_Study_v1.json"
+    ],
+    "reviewerContext": "Any external reviewer, including Meta AI, must treat the two files under Research/Approved/ as the current approved design foundation, this file as an unapproved draft, and AI_Handoff_Note.md as continuity guidance."
+  },
   "scope": {
     "included": [
       "Food yield from overworld activity",
@@ -30,7 +51,8 @@
   },
   "authoritativeReferences": [
     "Research/Approved/Scarcity_Config_v3.3.json",
-    "Research/Approved/Economy_Loop_Study_v1.json"
+    "Research/Approved/Economy_Loop_Study_v1.json",
+    "Research/Approved/AI_Handoff_Note.md"
   ],
   "currentKnownInputs": {
     "foodDriedRestore": 25,
@@ -129,7 +151,8 @@
       "Unclear measurement definitions",
       "Premature balance claims",
       "Contradictions with discrete repair rules",
-      "Whether this is the correct next study"
+      "Whether this is the correct next study",
+      "Whether the saved-file context and approval boundaries are respected"
     ],
     "classificationRequired": [
       "VERIFIED",
