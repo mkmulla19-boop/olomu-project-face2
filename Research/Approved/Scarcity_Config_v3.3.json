@@ -1,0 +1,309 @@
+{
+  "meta": {
+    "id": "Scarcity_Main_v3.3_durability_only",
+    "status": "APPROVED_FOR_DESIGN",
+    "implementationAllowed": false,
+    "resourceModel": "durability_only",
+    "fictionalResourceRule": {
+      "fortWeaponsConsume": "durability_only",
+      "ammunitionNotConsumed": true,
+      "appliesOnlyTo": "contested_fort",
+      "note": "Intentional abstraction to create pressure through condition and maintenance, not ammo count."
+    }
+  },
+  "inventory": {
+    "slotRules": {
+      "equippedWeaponExcludedFromBackpackTotal": true,
+      "equippedWeaponUsesEquipmentSlot": true,
+      "spareWeaponUsesBackpackSlot": true,
+      "hotbarAlsoConsumesBackpackSlot": false,
+      "stackedItemsUseOneSlotPerStack": true,
+      "lootReserveSlotsRequired": 3,
+      "equipmentSlotsTotal": 2,
+      "hotbarSlotsTotal": 4,
+      "backpackStart": 8,
+      "backpackBasic": 12,
+      "backpackMilitary": 20
+    },
+    "stackSizes": [
+      { "itemId": "Cleaning_Rag", "maxStack": 10 },
+      { "itemId": "Gun_Oil", "maxStack": 5 },
+      { "itemId": "Repair_Kit_Basic", "maxStack": 3 },
+      { "itemId": "Food_Dried", "maxStack": 10 },
+      { "itemId": "Medicine_Herbs", "maxStack": 5 },
+      { "itemId": "Bandage", "maxStack": 5 },
+      { "itemId": "Res_ScrapMetal", "maxStack": 20 }
+    ]
+  },
+  "weaponDurability": {
+    "durabilityModel": "condition_percent_0_to_100",
+    "weapons": [
+      {
+        "id": "Weapon_Musket_T0",
+        "conditionMax": 100,
+        "conditionLossPerShot": 1.5,
+        "jamThreshold": 40,
+        "jamBehavior": {
+          "usesPerWeaponThreshold": true,
+          "jamChanceAtThreshold": 0.10,
+          "jamChanceAtZero": 0.50,
+          "formula": "if condition > jamThreshold: 0 else lerp(0.10 to 0.50) based on normalized condition below threshold",
+          "rollPerShotBelowThreshold": true
+        }
+      },
+      {
+        "id": "Weapon_Rifle_Old",
+        "conditionMax": 100,
+        "conditionLossPerShot": 1.0,
+        "jamThreshold": 35,
+        "jamBehavior": {
+          "usesPerWeaponThreshold": true,
+          "jamChanceAtThreshold": 0.10,
+          "jamChanceAtZero": 0.50,
+          "formula": "if condition > jamThreshold: 0 else lerp(0.10 to 0.50) based on normalized condition below threshold",
+          "rollPerShotBelowThreshold": true
+        }
+      },
+      {
+        "id": "Weapon_Rifle_Good",
+        "conditionMax": 100,
+        "conditionLossPerShot": 0.6,
+        "jamThreshold": 20,
+        "jamBehavior": {
+          "usesPerWeaponThreshold": true,
+          "jamChanceAtThreshold": 0.10,
+          "jamChanceAtZero": 0.50,
+          "formula": "if condition > jamThreshold: 0 else lerp(0.10 to 0.50) based on normalized condition below threshold",
+          "rollPerShotBelowThreshold": true
+        }
+      }
+    ]
+  },
+  "repairAndCleaning": {
+    "cleaning": [
+      {
+        "id": "clean_quick",
+        "actionTimeSeconds": 2.0,
+        "restoresCondition": 5,
+        "resetsJamPenalty": true,
+        "clearsActiveJam": true,
+        "cost": [{ "itemId": "Cleaning_Rag", "qty": 1 }],
+        "canBeDoneInFort": true,
+        "interruptable": true
+      },
+      {
+        "id": "clean_full",
+        "actionTimeSeconds": 4.0,
+        "restoresCondition": 15,
+        "resetsJamPenalty": true,
+        "clearsActiveJam": true,
+        "cost": [
+          { "itemId": "Cleaning_Rag", "qty": 1 },
+          { "itemId": "Gun_Oil", "qty": 1 }
+        ],
+        "canBeDoneInFort": true,
+        "interruptable": true
+      }
+    ],
+    "repair": [
+      {
+        "id": "repair_basic",
+        "restoresCondition": 40,
+        "cost": [
+          { "itemId": "Repair_Kit_Basic", "qty": 1 },
+          { "itemId": "Res_ScrapMetal", "qty": 5 }
+        ],
+        "canBeDoneInFort": false,
+        "requiresWorkbench": true,
+        "worksOnBroken": true
+      }
+    ],
+    "breakRule": {
+      "whenConditionZero": "weapon broken, cannot fire, stays in inventory",
+      "canBeSwapped": true,
+      "canBeRepairedLater": true,
+      "meleeWhenBroken": false
+    }
+  },
+  "ammoSecondary": {
+    "model": "not_required_for_fort_weapons",
+    "note": "Ammo is not consumed in contested fort. It is reserved for overworld hunting/traps only.",
+    "overworldAmmoDrops": [
+      {
+        "enemyId": "Patrol_Rifleman_Light",
+        "drop": { "dropChance": 0.25, "items": [{ "itemId": "Ammo_MusketBall", "minQty": 2, "maxQty": 4 }] }
+      }
+    ]
+  },
+  "survivalRecovery": {
+    "hunger": {
+      "max": 100,
+      "drainMinutes_100_to_0": 45,
+      "recovery": [{ "itemId": "Food_Dried", "restore": 25 }],
+      "canExceedMax": false,
+      "damageWhenZero": { "perMinute": 2, "ignoresArmor": true },
+      "pausesOffline": true
+    },
+    "thirst": {
+      "max": 100,
+      "drainMinutes_100_to_0": 35,
+      "recovery": [{ "itemId": "Water_Clean", "restore": 30 }],
+      "canExceedMax": false,
+      "damageWhenZero": { "perMinute": 3, "ignoresArmor": true },
+      "pausesOffline": true
+    },
+    "infection": {
+      "timerMinutes": 30,
+      "damagePerMinute": 1,
+      "ignoresArmor": true,
+      "cure": [{ "itemId": "Medicine_Herbs", "qty": 2 }],
+      "pausesOffline": true
+    }
+  },
+  "travelAndDetection": {
+    "appliesIn": "overworld_only",
+    "doesNotApplyIn": ["inside_contestedFort"],
+    "baseDetection": 0.20,
+    "clamping": { "min": 0.05, "max": 0.85 },
+    "modifiers": [
+      { "id": "mod_gunfire", "value": 0.35, "trigger": "on_shot" },
+      { "id": "mod_sprint", "value": 0.15, "trigger": "sprinting" },
+      { "id": "mod_crouch", "value": -0.10, "trigger": "crouching" },
+      { "id": "mod_night", "value": -0.15, "trigger": "night" }
+    ],
+    "onDetect": {
+      "spawnPatrol": true,
+      "cooldownSeconds": 60,
+      "maxActivePatrols": 1,
+      "rollIntervalSeconds": 5
+    }
+  },
+  "crossPillarCapacityValidation": {
+    "accountingRule": "backpackTotal = spareWeapons + maintenance + survival + lootReserve; equipped weapon excluded",
+    "floors": [
+      {
+        "floorId": "floor_1_outer_perimeter",
+        "enemyCount": 18,
+        "shotAllocation": [{ "weaponId": "Weapon_Musket_T0", "shots": 18 }],
+        "derivedLoss": [{ "weaponId": "Weapon_Musket_T0", "calc": "18*1.5=27", "loss": 27 }],
+        "recommendedSetup": {
+          "equipmentSlotsUsed": 1,
+          "primaryWeapon": "Weapon_Musket_T0",
+          "spareWeapons": 1,
+          "maintenance": [{ "itemId": "Cleaning_Rag", "qty": 2 }],
+          "survival": [{ "itemId": "Food_Dried", "qty": 2 }]
+        },
+        "slotsNeeded": { "backpack_spare": 1, "maintenance": 1, "survival": 1, "lootReserve": 3, "totalBackpack": 6 },
+        "status": "RECOMMENDED_NOT_MANDATORY"
+      },
+      {
+        "floorId": "floor_2_inner_yard",
+        "enemyCount": 28,
+        "shotAllocation": [
+          { "weaponId": "Weapon_Rifle_Old", "shots": 25 },
+          { "weaponId": "Weapon_Musket_T0", "shots": 8 }
+        ],
+        "derivedLoss": [
+          { "weaponId": "Weapon_Rifle_Old", "calc": "25*1.0=25", "loss": 25 },
+          { "weaponId": "Weapon_Musket_T0", "calc": "8*1.5=12", "loss": 12 }
+        ],
+        "recommendedSetup": {
+          "equipmentSlotsUsed": 1,
+          "primaryWeapon": "Weapon_Rifle_Old",
+          "spareWeapon": "Weapon_Musket_T0",
+          "maintenance": [
+            { "itemId": "Cleaning_Rag", "qty": 2 },
+            { "itemId": "Gun_Oil", "qty": 1 }
+          ],
+          "survival": [{ "itemId": "Food_Dried", "qty": 3 }]
+        },
+        "slotsNeeded": { "backpack_spare": 1, "maintenance": 2, "survival": 1, "lootReserve": 3, "totalBackpack": 7 },
+        "status": "RECOMMENDED_NOT_MANDATORY"
+      },
+      {
+        "floorId": "floor_3_command_bunker",
+        "enemyCount": 35,
+        "startingConditionsForCalc": { "Weapon_Rifle_Good": 90, "Weapon_Rifle_Old": 75, "Weapon_Musket_T0": 100 },
+        "shotAllocation": [
+          { "weaponId": "Weapon_Rifle_Good", "shots": 30 },
+          { "weaponId": "Weapon_Rifle_Old", "shots": 15 },
+          { "weaponId": "Weapon_Musket_T0", "shots": 5 }
+        ],
+        "derivedLoss": [
+          { "weaponId": "Weapon_Rifle_Good", "calc": "30*0.6=18", "loss": 18, "end": "90-18=72" },
+          { "weaponId": "Weapon_Rifle_Old", "calc": "15*1.0=15", "loss": 15, "end": "75-15=60" },
+          { "weaponId": "Weapon_Musket_T0", "calc": "5*1.5=7.5", "loss": 7.5, "end": "92.5" }
+        ],
+        "expectedJams": {
+          "ifStartingAt50": {
+            "expectedRange": {
+              "minimum": 0,
+              "maximum": 1,
+              "note": "Only Old rifle is at threshold; additional jams require later shots or different starting conditions."
+            }
+          }
+        },
+        "recommendedSetup": {
+          "equipmentSlotsUsed": 1,
+          "primaryWeapon": "Weapon_Rifle_Good",
+          "spareWeapons": 2,
+          "spareIds": ["Weapon_Rifle_Old", "Weapon_Musket_T0"],
+          "maintenance": [
+            { "itemId": "Cleaning_Rag", "qty": 3 },
+            { "itemId": "Gun_Oil", "qty": 2 }
+          ],
+          "survival": [
+            { "itemId": "Food_Dried", "qty": 4 },
+            { "itemId": "Medicine_Herbs", "qty": 2 }
+          ]
+        },
+        "slotsNeeded": { "backpack_spare": 2, "maintenance": 2, "survival": 2, "lootReserve": 3, "totalBackpack": 9 },
+        "status": "RECOMMENDED_NOT_MANDATORY"
+      }
+    ]
+  },
+  "updatedPillar2Requirements": {
+    "model": "durability_cost_derived_from_shotAllocation",
+    "floors": [
+      {
+        "floorId": "floor_1_outer_perimeter",
+        "entryRequirement": "RECOMMENDED: 1 musket + 1 spare, no ammo mandatory",
+        "conditionCostDerived": "27% on primary",
+        "maintenanceGuidance": [{ "itemId": "Cleaning_Rag", "qty": 2 }]
+      },
+      {
+        "floorId": "floor_2_inner_yard",
+        "entryRequirement": "RECOMMENDED: 1 rifle old + 1 musket spare, 1 cleaning kit",
+        "conditionCostDerived": "25% + 12%",
+        "maintenanceGuidance": [
+          { "itemId": "Cleaning_Rag", "qty": 2 },
+          { "itemId": "Gun_Oil", "qty": 1 }
+        ]
+      },
+      {
+        "floorId": "floor_3_command_bunker",
+        "entryRequirement": "RECOMMENDED: 1 rifle good + 2 spares, 2 cleaning items",
+        "conditionCostDerived": "18% + 15% + 7.5%",
+        "maintenanceGuidance": [
+          { "itemId": "Cleaning_Rag", "qty": 3 },
+          { "itemId": "Gun_Oil", "qty": 2 }
+        ]
+      }
+    ]
+  },
+  "validationRules": [
+    "resourceModel == durability_only",
+    "No mandatory ammo field",
+    "Per-weapon jamThreshold authoritative, usesPerWeaponThreshold true",
+    "formula must be explicit per weapon",
+    "derivedLoss = shotAllocation * lossPerShot, no manual totals",
+    "equippedWeaponExcludedFromBackpackTotal true",
+    "equipmentSlotsUsed separate from backpack total",
+    "expected jams expressed as range when variable",
+    "maintenance uses explicit itemIds",
+    "all stacks defined",
+    "survival pauses offline",
+    "travelAndDetection doesNotApplyIn fort",
+    "breakRule: swap and repair later"
+  ]
+}
