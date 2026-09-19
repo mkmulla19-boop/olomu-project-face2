@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "id": "Overworld_Farming_Yield_Study_v1",
+    "title": "Overworld Farming Yield Study v1",
+    "status": "STUDY_DRAFT_AWAITING_REVIEW",
+    "implementationAllowed": false,
+    "purpose": "Define the evidence and measurement structure needed to determine whether overworld preparation can sustain the Contested Fort economy.",
+    "reviewRequired": true,
+    "approvalTarget": "Research/Approved/Overworld_Farming_Yield_Study_v1.json"
+  },
+  "scope": {
+    "included": [
+      "Food yield from overworld activity",
+      "Water yield from overworld activity",
+      "Scrap yield from overworld activity",
+      "Repair-kit yield or source availability",
+      "Maintenance-item yield",
+      "Time required for each farming activity",
+      "Danger, interruption, and failure risk",
+      "Preparation capacity for Fort Floors 1, 2, and 3"
+    ],
+    "excluded": [
+      "Unity implementation",
+      "Final loot-table implementation",
+      "Final badge-to-resource conversion values",
+      "Final death and recovery rules",
+      "Changes to Pillar 2 or Pillar 3",
+      "Changes to Scarcity_Config_v3.3.json"
+    ]
+  },
+  "authoritativeReferences": [
+    "Research/Approved/Scarcity_Config_v3.3.json",
+    "Research/Approved/Economy_Loop_Study_v1.json"
+  ],
+  "currentKnownInputs": {
+    "foodDriedRestore": 25,
+    "waterCleanRestore": 30,
+    "hungerDrainPerMinute": 2.222222,
+    "thirstDrainPerMinute": 2.857143,
+    "fullClearConditionLoss": 40.5,
+    "repairRule": "Repair is per weapon. A full restore may require up to 3 discrete Repair_Kit_Basic uses when all three weapons require repair.",
+    "fortClearTimes": {
+      "status": "UNRESOLVED",
+      "provisionalValuesMinutes": {
+        "floor_1": 12,
+        "floor_2": 15,
+        "floor_3": 18
+      },
+      "note": "These are study assumptions only and are not authoritative values."
+    }
+  },
+  "studyQuestions": [
+    "How much food does an average player obtain during 30 minutes of overworld preparation?",
+    "How much water does an average player obtain during 30 minutes of overworld preparation?",
+    "How much scrap does an average player obtain during 30 minutes of overworld preparation?",
+    "Are repair kits obtained in the overworld, and at what reliable rate?",
+    "Which maintenance items are obtained in the overworld, and at what rate?",
+    "What time and travel cost is required to collect each resource?",
+    "What is the expected failure, interruption, or death risk during farming?",
+    "How much preparation is required to support one run on each Fort floor?",
+    "Does overworld farming make the intended Floor 1, Floor 2, and Floor 3 loop sustainable?"
+  ],
+  "measurementModel": {
+    "standardSessionMinutes": 30,
+    "requiredSamples": "Use a minimum of 3 comparable samples per activity when evidence becomes available. Record average, low, and high yield.",
+    "recordPerActivity": [
+      "activityId",
+      "locationOrSource",
+      "timeMinutes",
+      "foodItems",
+      "waterItems",
+      "scrapAmount",
+      "repairKits",
+      "maintenanceItems",
+      "travelCost",
+      "damageOrConditionCost",
+      "deathsOrFailedAttempts",
+      "notes"
+    ],
+    "yieldReporting": {
+      "average": "Expected yield per 30 minutes",
+      "low": "Conservative yield per 30 minutes",
+      "high": "Best-case yield per 30 minutes",
+      "confidence": "Mark each value as observed, defined by approved design, provisional estimate, or unknown."
+    }
+  },
+  "comparisonFramework": {
+    "targetRuns": [
+      "one Floor 1 run",
+      "one Floor 2 run",
+      "one Floor 3 run",
+      "one full three-floor clear"
+    ],
+    "compare": [
+      "food consumed versus food farmed",
+      "water consumed versus water farmed",
+      "condition loss versus repair-kit availability",
+      "scrap consumed versus scrap farmed",
+      "preparation time versus fort time",
+      "expected reward versus preparation cost",
+      "failure risk versus recovery capacity"
+    ],
+    "profitabilityStatus": "Do not label a floor profitable, break-even, or net-loss until resource values and conversion assumptions are explicitly defined."
+  },
+  "requiredOutputs": [
+    "Overworld resource source table",
+    "Average, conservative, and best-case yield per 30 minutes",
+    "Repair-kit availability classification",
+    "Preparation requirement for each Fort floor",
+    "Full-clear preparation requirement",
+    "Known risks and loss conditions",
+    "List of values still requiring approval"
+  ],
+  "openQuestions": [
+    "Repair-kit source and drop table",
+    "Scrap value and intended uses",
+    "Badge-to-resource conversion",
+    "Food_Stew role compared with Food_Dried",
+    "Water source and drop rate",
+    "Evidence-based Fort clear times",
+    "Whether overworld farming is safe, contested, or interruptible",
+    "Whether farming has stamina, travel, or time-window limits"
+  ],
+  "reviewInstructions": {
+    "requestedReviewer": "Meta AI",
+    "checkFor": [
+      "Incorrect assumptions against the approved scarcity and economy files",
+      "Missing resource categories or sources",
+      "Unclear measurement definitions",
+      "Premature balance claims",
+      "Contradictions with discrete repair rules",
+      "Whether this is the correct next study"
+    ],
+    "classificationRequired": [
+      "VERIFIED",
+      "NEEDS_CORRECTION",
+      "UNRESOLVED",
+      "NEXT_STUDY_RECOMMENDATION",
+      "IMPLEMENTATION_ALLOWED: false"
+    ]
+  },
+  "validation": {
+    "status": "DRAFT_ONLY",
+    "implementationAllowed": false,
+    "approvedForDesign": false,
+    "approvedForUnity": false
+  }
+}
