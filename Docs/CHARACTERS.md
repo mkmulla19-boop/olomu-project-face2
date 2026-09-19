@@ -1,21 +1,42 @@
 # CHARACTERS
 
-**Status:** Placeholder – no permanent characters defined yet.
+**Status:** Framework only — no characters invented yet.
 
-## Major Characters
+---
 
-[TBD — Major characters]
+## Character Template
 
-## Supporting Characters
+Use this template when defining any character:
 
-[TBD]
+| Field | Content |
+|-------|---------|
+| Name | [TBD] |
+| Age | [TBD] |
+| Origin | [TBD] |
+| Community | [TBD] |
+| Role | [TBD] |
+| Personality | [TBD] |
+| Appearance | [TBD] |
+| Skills | [TBD] |
+| Beliefs | [TBD] |
+| Relationships | [TBD] |
+| Goals | [TBD] |
+| Fears | [TBD] |
+| Secrets | [TBD] |
+| Story arc | [TBD] |
+| Relationship with player | [TBD] |
+| Reaction to player choices | [TBD] |
+| Possible fate | [TBD] |
 
-## Character Creation Guidelines
+---
 
+## Character List
+
+*(No characters defined yet. Add entries below using the template above once approved by the project owner.)*
+
+---
+
+**Rules**
 - All characters must be original.
-- No copying of characters, names, or distinctive traits from existing games or media.
-- Characters should feel grounded in the historical-fiction African setting once defined.
-
-## Notes
-
-Do not invent named characters or backstories without explicit approval.
+- Do not copy names, personalities, or distinctive traits from existing games or media.
+- Characters should have their own motivations.

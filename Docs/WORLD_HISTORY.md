@@ -1,21 +1,73 @@
 # WORLD HISTORY
 
-**Status:** Placeholder – historical and fictional timeline not yet defined.
+**Status:** Framework only — no invented fictional events yet.
 
-This document will contain the in-world history that informs the setting of Olomu.
+---
 
-## Historical Period
+## Historical Inspiration
 
-Inspired by the era of increasing European colonial expansion in African environments (specifically referencing the historical context of figures such as Nana/Nanna Olomu and the Niger Delta region), but the exact fictional timeline and events remain [TBD].
+Olomu draws inspiration from the historical period of increasing European colonial expansion in African environments, including the context surrounding figures such as Nana/Nanna Olomu and the Niger Delta region in the late 19th century.
 
-## Key Historical Events (Fictional)
+This section is for real-world historical context that informs atmosphere, authenticity, and research. It is **not** the game’s story.
+
+### Notes on Inspiration
+
+[Research notes and real historical references will be added here as needed. See also Research/HISTORICAL_RESEARCH.md.]
+
+---
+
+## Original Olomu Fictional History
+
+All events below are (or will be) original fiction created for Olomu. They must not be presented as real history.
+
+### Fictional Timeline
 
 [TBD]
 
-## Cultural & Political Landscape
+### Major Historical Events (Fictional)
 
 [TBD]
 
-## Notes
+### Local Events
 
-All specific historical-fiction content must be original and approved by the project owner.
+[TBD]
+
+### Political Changes
+
+[TBD]
+
+### Community Changes
+
+[TBD]
+
+### Foreign Involvement
+
+[TBD]
+
+### Trade Developments
+
+[TBD]
+
+### Conflicts
+
+[TBD]
+
+### Important Discoveries
+
+[TBD]
+
+### Events Occurring Before the Player Begins
+
+[TBD]
+
+### Events Occurring During the Player’s Story
+
+[TBD]
+
+### Possible Future Events
+
+[TBD]
+
+---
+
+**Reminder:** Keep historical inspiration and original fictional history clearly separated at all times.

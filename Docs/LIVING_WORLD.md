@@ -1,26 +1,33 @@
 # LIVING WORLD
 
-**Status:** Architectural principle defined; implementation pending.
+**Status:** Framework only — implementation pending.
+
+---
 
 ## Core Principle
 
-Olomu should eventually feel like a world that continues existing beyond the player’s immediate quest.
+Olomu should eventually feel like a world that continues existing and changing beyond the player’s immediate quest. The world should not feel completely frozen while the player is doing something else.
+
+---
 
 ## Planned Support Areas
 
-- NPC schedules
-- NPC relationships
-- Factions
+- NPC routines
+- Relationships
+- Faction activity
 - Trade
-- Resource changes
 - Wildlife
-- Environmental changes
+- Resource regeneration
 - Community development
-- Conflicts
+- Conflict
+- Migration
 - World events
 - Player reputation
-- Consequences of player actions
+- Persistent consequences
+- Time progression
+
+---
 
 ## Notes
 
-The exact implementation of these systems will be designed later. The goal is systemic life rather than purely scripted activity.
+Exact implementation of these systems will be designed later. The goal is systemic life rather than purely scripted activity. This document defines the design intent only.

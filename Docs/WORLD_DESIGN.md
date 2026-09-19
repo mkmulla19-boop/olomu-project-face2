@@ -1,23 +1,79 @@
 # WORLD DESIGN
 
-**Status:** Placeholder.
+**Status:** Framework only — regions not yet defined.
 
-## Biomes & Regions
+---
 
-[TBD]
+## Regions
 
-## Starting Location
+### Region 01 — [TBD]
 
-[TBD — Starting location]
+| Aspect | Content |
+|--------|---------|
+| Environment | [TBD] |
+| Climate | [TBD] |
+| Communities | [TBD] |
+| Wildlife | [TBD] |
+| Resources | [TBD] |
+| Trade | [TBD] |
+| Dangers | [TBD] |
+| Important characters | [TBD] |
+| Factions | [TBD] |
+| Stories | [TBD] |
+| Secrets | [TBD] |
+| Historical significance | [TBD] |
 
-## World Scale & Streaming Approach
+### Region 02 — [TBD]
 
-[TBD]
+| Aspect | Content |
+|--------|---------|
+| Environment | [TBD] |
+| Climate | [TBD] |
+| Communities | [TBD] |
+| Wildlife | [TBD] |
+| Resources | [TBD] |
+| Trade | [TBD] |
+| Dangers | [TBD] |
+| Important characters | [TBD] |
+| Factions | [TBD] |
+| Stories | [TBD] |
+| Secrets | [TBD] |
+| Historical significance | [TBD] |
 
-## Environmental Features
+### Region 03 — [TBD]
 
-[TBD]
+| Aspect | Content |
+|--------|---------|
+| Environment | [TBD] |
+| Climate | [TBD] |
+| Communities | [TBD] |
+| Wildlife | [TBD] |
+| Resources | [TBD] |
+| Trade | [TBD] |
+| Dangers | [TBD] |
+| Important characters | [TBD] |
+| Factions | [TBD] |
+| Stories | [TBD] |
+| Secrets | [TBD] |
+| Historical significance | [TBD] |
 
-## Notes
+### Region 04 — [TBD]
 
-World design will support the living-world and environmental storytelling principles defined elsewhere.
+| Aspect | Content |
+|--------|---------|
+| Environment | [TBD] |
+| Climate | [TBD] |
+| Communities | [TBD] |
+| Wildlife | [TBD] |
+| Resources | [TBD] |
+| Trade | [TBD] |
+| Dangers | [TBD] |
+| Important characters | [TBD] |
+| Factions | [TBD] |
+| Stories | [TBD] |
+| Secrets | [TBD] |
+| Historical significance | [TBD] |
+
+---
+
+Additional regions may be added later. Do not invent region names, environments, or content without project owner approval.

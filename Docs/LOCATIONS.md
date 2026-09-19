@@ -1,15 +1,39 @@
 # LOCATIONS
 
-**Status:** Placeholder.
+**Status:** Framework only — no locations invented yet.
 
-## Key Locations
+---
 
-[TBD]
+## Location Template
 
-## Starting Location
+Use this template when defining any location:
 
-[TBD — Starting location]
+| Field | Content |
+|-------|---------|
+| Name | [TBD] |
+| Region | [TBD] |
+| Type | [TBD] |
+| Historical background | [TBD] |
+| Population | [TBD] |
+| Important NPCs | [TBD] |
+| Resources | [TBD] |
+| Wildlife | [TBD] |
+| Threats | [TBD] |
+| Buildings | [TBD] |
+| Secrets | [TBD] |
+| Environmental storytelling | [TBD] |
+| Quests | [TBD] |
+| World events | [TBD] |
+| Possible changes over time | [TBD] |
 
-## Notes
+---
 
-Locations should support exploration, environmental storytelling, and living-world activity.
+## Location List
+
+*(No locations defined yet. Add entries below using the template above once approved by the project owner.)*
+
+---
+
+**Rules**
+- All locations must be original.
+- Locations should support exploration, environmental storytelling, and living-world activity.

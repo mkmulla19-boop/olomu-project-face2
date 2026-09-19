@@ -1,15 +1,39 @@
 # FACTIONS
 
-**Status:** Placeholder.
+**Status:** Framework only — no factions invented yet.
 
-## Major Factions
+---
 
-[TBD — Major factions]
+## Faction Template
 
-## Faction Relationships
+Use this template when defining any faction:
 
-[TBD]
+| Field | Content |
+|-------|---------|
+| Name | [TBD] |
+| Origin | [TBD] |
+| Leadership | [TBD] |
+| Beliefs | [TBD] |
+| Goals | [TBD] |
+| Territory | [TBD] |
+| Resources | [TBD] |
+| Allies | [TBD] |
+| Enemies | [TBD] |
+| Internal conflicts | [TBD] |
+| Relationship with player | [TBD] |
+| Relationship with other factions | [TBD] |
+| Reaction to player actions | [TBD] |
+| Long-term objectives | [TBD] |
 
-## Notes
+---
 
-Factions will interact with the living-world systems (reputation, trade, conflict, etc.). All faction identities must be original.
+## Faction List
+
+*(No factions defined yet. Add entries below using the template above once approved by the project owner.)*
+
+---
+
+**Rules**
+- All factions must be original.
+- Factions should have competing interests.
+- Do not copy factions or distinctive group identities from existing games.

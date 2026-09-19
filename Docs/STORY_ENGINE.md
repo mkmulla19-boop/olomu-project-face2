@@ -1,32 +1,50 @@
 # STORY ENGINE
 
-**Status:** Architectural principle defined; implementation pending.
+**Status:** Design principle defined — implementation pending.
 
-## Core Principle
+---
 
-Olomu should use a **story engine**, not only a fixed list of missions.
-
-The intended flow is:
+## Intended Architecture
 
 ```
-Player Action
-     ↓
-Game Event
-     ↓
-World / Story System
-     ↓
-Quest or Story Condition
-     ↓
-Story Response
-     ↓
-World Changes
-     ↓
-New Events
-     ↓
-New Stories
+PLAYER
+  ↓
+GAMEPLAY ACTION
+  ↓
+GAME EVENT
+  ↓
+WORLD STATE
+  ↓
+STORY CONDITION
+  ↓
+STORY RESPONSE
+  ↓
+NPC / LOCATION / QUEST / FACTION CHANGE
+  ↓
+NEW GAMEPLAY
 ```
 
-The world should be capable of generating new situations from previous events and player actions.
+---
+
+## Chains of Consequences
+
+The story system must eventually be capable of creating chains of consequences. Example principle (not a final implementation):
+
+```
+Player helps Person A
+        ↓
+Person A remembers
+        ↓
+Faction B learns about it
+        ↓
+Faction B changes its attitude
+        ↓
+New opportunity appears
+        ↓
+Different story becomes available
+```
+
+---
 
 ## Possible Story Components
 
@@ -45,6 +63,8 @@ The world should be capable of generating new situations from previous events an
 - Consequences
 - Persistent world state
 
+---
+
 ## Notes
 
-Exact architecture (event bus, condition evaluators, narrative state machines, etc.) will be designed in the Technical documentation later.
+This is a design principle, not a final technical implementation. Exact architecture (event bus, condition evaluators, narrative state, etc.) will be detailed in the Technical documentation later.
