@@ -1,6 +1,6 @@
 # STORY BIBLE
 
-**Status:** Framework only — creative content not yet defined by project owner.
+**Status:** Creative framework established — all major creative decisions marked as requiring project owner approval.
 
 ---
 
@@ -8,62 +8,81 @@
 
 - **Game title:** Olomu
 - **Genre:** Survival, exploration, adventure, historical-fiction
-- **Setting:** [TBD — African environments during the period of increasing European colonial expansion]
-- **Historical-fiction approach:** Inspired by real historical context (including figures and regions such as Nana/Nanna Olomu and the Niger Delta), but all specific story events, characters, and outcomes are original fiction. Historical inspiration must remain clearly separated from invented narrative.
-- **Core player experience:** [TBD — to be defined by project owner]
+- **Setting:** Original fictional world inspired by African environments during the period of increasing European colonial expansion
+- **Historical-fiction approach:** Real-world Africa provides inspiration and grounding (architecture, clothing, agriculture, trade, technology, social structures, geography, cultural practices, political pressures). Olomu is **not** a recreation of any specific historical country, kingdom, or real person’s life. It is an original fictional universe.
+- **Core player experience:** Survival, exploration, discovery, communities, relationships, trade, culture, political pressure, changing societies, difficult choices, secrets, consequences, protecting what matters, and discovering the truth behind events.
 
 ---
 
 ## B. Central Mystery
 
-**[TBD — Central Mystery]**
+**[DECISION REQUIRED — Central Mystery]**
 
 | Aspect | Content |
 |--------|---------|
-| What the player initially knows | [TBD] |
-| What the player does not know | [TBD] |
-| What the player discovers | [TBD] |
-| The deeper mystery | [TBD] |
-| Major revelations | [TBD] |
-| Final truth | [TBD] |
+| What is the player initially told? | [DECISION REQUIRED] |
+| What appears to be happening? | [DECISION REQUIRED] |
+| What does the player gradually discover? | [DECISION REQUIRED] |
+| What information is deliberately hidden? | [DECISION REQUIRED] |
+| Who benefits from the mystery remaining hidden? | [DECISION REQUIRED] |
+| Who is trying to uncover it? | [DECISION REQUIRED] |
+| What evidence exists? | [DECISION REQUIRED] |
+| What contradictions exist? | [DECISION REQUIRED] |
+| What major revelation changes the player’s understanding? | [DECISION REQUIRED] |
+| What is the ultimate truth? | [DECISION REQUIRED] |
+| Can the player discover different parts of the truth in different ways? | [DECISION REQUIRED] |
 
 ---
 
-## C. Player
+## C. The Question That Drives Olomu
 
-**[TBD — Player Identity]**
+**[DECISION REQUIRED]**
+
+This is the single question that should make the player want to continue exploring. It has not yet been defined by the project owner.
+
+---
+
+## D. Player Identity
+
+**[DECISION REQUIRED — Player Identity]**
 
 | Field | Content |
 |-------|---------|
-| Name | [TBD] |
-| Origin | [TBD] |
-| Community | [TBD] |
-| Skills | [TBD] |
-| Personal motivation | [TBD] |
-| Initial goal | [TBD] |
-| Long-term goal | [TBD] |
-| Personal conflict | [TBD] |
+| Name | [DECISION REQUIRED] |
+| Age | [DECISION REQUIRED] |
+| Community | [DECISION REQUIRED] |
+| Family | [DECISION REQUIRED] |
+| Skills | [DECISION REQUIRED] |
+| Occupation | [DECISION REQUIRED] |
+| Beliefs | [DECISION REQUIRED] |
+| Personal motivation | [DECISION REQUIRED] |
+| Initial goal | [DECISION REQUIRED] |
+| Major fear | [DECISION REQUIRED] |
+| Personal conflict | [DECISION REQUIRED] |
+| Connection to the central mystery | [DECISION REQUIRED] |
+| Relationship with their community | [DECISION REQUIRED] |
+| Starting circumstances | [DECISION REQUIRED] |
 
 ---
 
-## D. World
+## E. World Overview
 
 | Aspect | Content |
 |--------|---------|
-| Historical period | [TBD] |
-| Region | [TBD] |
-| Political situation | [TBD] |
-| Social structure | [TBD] |
-| Major communities | [TBD] |
-| Trade | [TBD] |
-| Religion / spiritual beliefs | [TBD] |
-| Technology | [TBD] |
-| Environment | [TBD] |
-| Major historical pressures | [TBD] |
+| Historical period | [DECISION REQUIRED] |
+| Region | [DECISION REQUIRED] |
+| Political situation | [DECISION REQUIRED] |
+| Social structure | [DECISION REQUIRED] |
+| Major communities | [DECISION REQUIRED] |
+| Trade | [DECISION REQUIRED] |
+| Religion / spiritual beliefs | [DECISION REQUIRED] |
+| Technology | [DECISION REQUIRED] |
+| Environment | [DECISION REQUIRED] |
+| Major historical pressures | [DECISION REQUIRED] |
 
 ---
 
-## E. Story Structure
+## F. Story Structure
 
 Planned high-level structure (events not yet filled):
 
@@ -91,4 +110,25 @@ LARGER WORLD
 MULTIPLE STORY ARCS
 ```
 
-Do not invent the actual events for these stages until directed by the project owner.
+Supported story types:
+- Main Story
+- Character Stories
+- Community Stories
+- Faction Stories
+- Investigations
+- Exploration
+- World Events
+- Player-Created Consequences
+
+---
+
+## G. Core Design Principles (Creative)
+
+- Olomu is not simply a game about fighting an invading force.
+- Different people and groups have different motivations, beliefs, fears, interests, alliances, and methods.
+- There is no simple “Africa = good / Europe = evil” model.
+- The player enters an existing world; communities and factions have their own goals and continue existing beyond the player.
+- Consequences of player actions can appear much later.
+- Cultural elements (family, community, oral storytelling, music, food, craftsmanship, spiritual beliefs, leadership, conflict resolution, etc.) should influence gameplay and storytelling, not merely serve as visual decoration.
+
+Do not invent the actual content of the mystery, player, or world details until the project owner provides them.

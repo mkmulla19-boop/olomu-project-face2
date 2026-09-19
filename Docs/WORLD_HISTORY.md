@@ -1,73 +1,117 @@
 # WORLD HISTORY
 
-**Status:** Framework only — no invented fictional events yet.
+**Status:** Framework updated — clear separation between historical inspiration and original fiction maintained.
 
 ---
 
-## Historical Inspiration
+## Layer A — Historical Inspiration
 
-Olomu draws inspiration from the historical period of increasing European colonial expansion in African environments, including the context surrounding figures such as Nana/Nanna Olomu and the Niger Delta region in the late 19th century.
+Olomu draws inspiration from real-world Africa during the period of increasing European colonial expansion.
 
-This section is for real-world historical context that informs atmosphere, authenticity, and research. It is **not** the game’s story.
+Real-world influences may inform:
 
-### Notes on Inspiration
+- architecture
+- clothing
+- agriculture
+- trade
+- technology
+- weapons
+- transportation
+- social structures
+- geography
+- cultural practices
+- political pressures
+
+This layer provides grounding and authenticity. It is **not** the game’s story and must never be presented as the fictional history of Olomu.
+
+### Research Notes
 
 [Research notes and real historical references will be added here as needed. See also Research/HISTORICAL_RESEARCH.md.]
 
 ---
 
-## Original Olomu Fictional History
+## Layer B — Fictional World (Original Olomu History)
 
-All events below are (or will be) original fiction created for Olomu. They must not be presented as real history.
+All content in this section is (or will be) original fiction created for Olomu.
 
 ### Fictional Timeline
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Major Historical Events (Fictional)
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Local Events
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Political Changes
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Community Changes
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Foreign Involvement
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Trade Developments
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Conflicts
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Important Discoveries
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Events Occurring Before the Player Begins
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Events Occurring During the Player’s Story
 
-[TBD]
+[DECISION REQUIRED]
 
 ### Possible Future Events
 
-[TBD]
+[DECISION REQUIRED]
 
 ---
 
-**Reminder:** Keep historical inspiration and original fictional history clearly separated at all times.
+## Layer C — Player Story
+
+The player’s actions determine how parts of the fictional world develop. Consequences can be immediate or delayed.
+
+---
+
+## Colonial-Era Conflict Representation
+
+The arrival and expansion of European influence is treated as a complex historical-fiction process.
+
+Potential forces (to be defined later, not yet invented):
+
+- traders
+- explorers
+- missionaries
+- political representatives
+- soldiers
+- merchants
+- local rulers
+- local traders
+- communities
+- intermediaries
+- resistance groups
+- people seeking cooperation
+- people seeking personal advantage
+
+No group is automatically classified as good or evil. Characters and groups have individual motivations.
+
+---
+
+**Reminder:** Always keep historical inspiration (Layer A) clearly separated from original fictional history (Layer B).
