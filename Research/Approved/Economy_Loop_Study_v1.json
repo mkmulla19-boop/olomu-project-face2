@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "id": "Economy_Loop_Study_v1",
+    "status": "APPROVED_FOR_DESIGN",
+    "implementationAllowed": false,
+    "studyType": "sustainability_and_balance_review",
+    "scope": "Connect Contested Fort progression, durability-first scarcity, survival consumption, rewards, and recovery without authorizing implementation.",
+    "approvalMeaning": "The study structure and verified findings are approved for continued design. Open balance inputs remain explicitly deferred and are not implementation requirements."
+  },
+  "verifiedCalculations": {
+    "weaponDurability": {
+      "floor_1": { "weaponId": "Weapon_Musket_T0", "shots": 18, "lossPerShot": 1.5, "conditionLoss": 27 },
+      "floor_2": { "weaponId": "Weapon_Rifle_Old", "shots": 25, "lossPerShot": 1.0, "conditionLoss": 25 },
+      "floor_2_secondary": { "weaponId": "Weapon_Musket_T0", "shots": 8, "lossPerShot": 1.5, "conditionLoss": 12 },
+      "floor_3": { "weaponId": "Weapon_Rifle_Good", "shots": 30, "lossPerShot": 0.6, "conditionLoss": 18 },
+      "floor_3_secondary": { "weaponId": "Weapon_Rifle_Old", "shots": 15, "lossPerShot": 1.0, "conditionLoss": 15 },
+      "floor_3_tertiary": { "weaponId": "Weapon_Musket_T0", "shots": 5, "lossPerShot": 1.5, "conditionLoss": 7.5 },
+      "fullClearTotalConditionLoss": 40.5,
+      "repairRule": "Repair is per weapon. A full restore may require up to 3 discrete Repair_Kit_Basic uses when all three weapons require repair. Fractional kit pooling is not allowed."
+    },
+    "badgesAndCrates": {
+      "floorAverages": { "floor_1": 11.5, "floor_2": 21.5, "floor_3": 32.5 },
+      "fullClearAverage": 65.5,
+      "crateSetCost": 95,
+      "fullClearsForOneFullCrateSet": 1.45,
+      "interpretation": "The player must prioritize crates; one full clear does not fund every crate."
+    },
+    "survivalRates": {
+      "hungerPerMinute": 2.222222,
+      "thirstPerMinute": 2.857143,
+      "foodDriedRestore": 25,
+      "waterCleanRestore": 30,
+      "interpretation": "The rates are mathematically verified, but actual fort consumption requires an approved clear-time and fort-drain rule."
+    }
+  },
+  "approvedDesignRules": {
+    "sustainabilityIntent": {
+      "floor_1": "target_slightly_profitable",
+      "floor_2": "target_break_even",
+      "floor_3": "target_net_loss_without_overworld_support",
+      "fullClear": "requires preparation and may require overworld farming",
+      "status": "design_intent_not_yet_economic_proof"
+    },
+    "resourceLoop": [
+      "Overworld activity supplies survival, maintenance, and repair resources.",
+      "Fort activity consumes condition, supplies, time, and recovery capacity.",
+      "Badges provide progression choices rather than guaranteeing every crate each run.",
+      "The player is expected to alternate between overworld preparation and fort pressure.",
+      "The loop must remain recoverable after failure; no permanent wipe is authorized by this study."
+    ],
+    "deathCost": "Death drops backpack contents according to the active Contested Fort rule. Equipped-weapon treatment remains governed by the authoritative fort configuration and is not redefined here."
+  },
+  "notYetAuthoritative": {
+    "clearTimes": "The 12/15/18 minute floor estimates are provisional study assumptions and are not authoritative requirements.",
+    "fortSurvivalDrain": "No special fort multiplier is approved by this study. The existing survival rules remain unchanged until separately approved.",
+    "repairKitSource": "No reliable repair-kit source is established here. This remains a required economy input.",
+    "scrapAndOverworldYields": "No yield values are established here.",
+    "badgeConversion": "No badge-to-resource conversion is established here.",
+    "foodVariantBalance": "Food_Stew versus Food_Dried remains open for later balancing."
+  },
+  "acceptanceCriteriaForNextRevision": [
+    "Define or study overworld food, water, scrap, maintenance, and repair-kit yields.",
+    "Define evidence-based expected clear times for each fort floor.",
+    "Convert survival and repair costs into a common time/resource basis before claiming profit or loss.",
+    "Keep discrete per-weapon repair accounting.",
+    "Recheck death cost after resource values are defined.",
+    "Do not convert this study into Unity assets, code, scenes, prefabs, or ScriptableObjects."
+  ],
+  "nextStudy": {
+    "id": "Overworld_Farming_Yield_Study_v1",
+    "purpose": "Supply the missing resource-yield inputs needed to validate the intended fort economy.",
+    "afterNext": "Death_Recovery_Finalization_Study_v1"
+  },
+  "validation": {
+    "status": "APPROVED_FOR_DESIGN",
+    "implementationAllowed": false,
+    "openQuestionsAreDeferred": true,
+    "noFinalBalanceValuesClaimed": true
+  }
+}
