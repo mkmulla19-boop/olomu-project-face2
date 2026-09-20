@@ -11,6 +11,7 @@ README.md
 Development/UNITY_AI_INSTRUCTIONS.md
 Research/Approved/Scarcity_Config_v3.3.json
 Research/Approved/Economy_Loop_Study_v1.json
+Research/Approved/Overworld_Farming_Yield_Study_v1.json
 ```
 
 ## Current project phase
@@ -41,6 +42,18 @@ implementationAllowed: false
 ```
 
 This approval means the study structure and verified findings are accepted for continued design. It does not mean that all balance values are final or ready for Unity implementation.
+
+### `Research/Approved/Overworld_Farming_Yield_Study_v1.json`
+
+Status:
+
+```text
+APPROVED_FOR_DESIGN
+implementationAllowed: false
+approvedForUnity: false
+```
+
+This file approves the research direction and study structure. It does not establish final overworld yields, final balance, or Unity implementation requirements.
 
 ## Important verified findings
 
@@ -73,6 +86,9 @@ Do not silently decide or implement these:
 - badge-to-resource conversion
 - Food_Stew versus Food_Dried balance
 - final economic value of death losses
+- exact camera zoom limits
+- camera follow smoothing, height, angle, clipping, and obstruction behavior
+- final device-specific camera input mapping
 
 The `12/15/18 minute` floor-clear estimates are provisional assumptions, not approved authoritative values.
 
@@ -142,28 +158,24 @@ Load
 
 This is an Olomu design structure informed by broad survival-game patterns, not a reproduction of another game's opening.
 
-## Next study
+## Camera foundation — approved design decisions
 
-The approved opening foundation should be validated against the existing scarcity and economy foundation before beginning another study. No new study file is required for these opening decisions.
+The camera decisions below define the intended player-facing structure only. They do not authorize Unity implementation.
 
-The next research file remains deferred until the opening foundation is confirmed against the project structure:
+- Perspective: angled top-down / isometric-like.
+- Follow: automatic player follow.
+- Rotation: not allowed.
+- Free camera pan: not allowed.
+- Zoom: limited zoom in/out only.
+- Home base: modestly wider maximum zoom-out than normal locations for construction visibility.
+- Overworld: standard limited zoom range.
+- Fort: standard limited zoom range or slightly tighter maximum view for combat readability and to avoid seeing outside the Fort.
+- Follow behavior remains consistent across home base, overworld, and Fort.
+- No separate combat camera switch is approved.
+- On opening spawn, the camera must keep the character and first base objective visible together.
+- Exact zoom limits and technical camera values remain unresolved.
 
-```text
-Research/Approved/Overworld_Farming_Yield_Study_v1.json
-```
-
-Purpose:
-
-- define or study food, water, scrap, maintenance, and repair-kit yields
-- establish expected overworld yield per time period
-- compare overworld preparation against Floor 1, Floor 2, and Floor 3 costs
-- provide the missing values needed to revise the economy study
-
-After that, the planned study is:
-
-```text
-Research/Approved/Death_Recovery_Finalization_Study_v1.json
-```
+This uses broad structural reference only. Olomu’s camera presentation and implementation must remain original.
 
 ## Working rules for the next AI
 
@@ -183,11 +195,9 @@ Research/Approved/Death_Recovery_Finalization_Study_v1.json
 
 ## Last completed action
 
-The opening foundation decisions were added to this handoff note:
+The approved camera foundation was recorded in:
 
-- minimal character creation
-- home-base spawn near the first objective
-- initial opening-state values
-- first interaction and outward resource loop
+- `Docs/OLOMU_MASTER_BLUEPRINT.md`
+- this handoff note
 
-Unity implementation remains unauthorized.
+The camera decisions are design-only. Unity implementation remains unauthorized.
