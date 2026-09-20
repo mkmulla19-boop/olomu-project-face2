@@ -52,37 +52,10 @@
   "1_overworldZoneInventory": {
     "purpose": "List all overworld sources that can drop resources — all drops are hypotheses until verified",
     "zonesToInventory": [
-      {
-        "zoneId": "overworld_pine_grove",
-        "type": "resource_zone",
-        "candidateDrops": [
-          { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" },
-          { "itemId": "Food_Dried", "status": "UNVERIFIED_HYPOTHESIS" },
-          { "itemId": "Cloth_Scrap", "status": "UNVERIFIED_HYPOTHESIS" }
-        ]
-      },
-      {
-        "zoneId": "overworld_limestone_ridge",
-        "type": "resource_zone",
-        "candidateDrops": [
-          { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" },
-          { "itemId": "Gun_Oil", "status": "UNVERIFIED_HYPOTHESIS" }
-        ]
-      },
-      {
-        "zoneId": "overworld_abandoned_farm",
-        "type": "risk_zone",
-        "candidateDrops": [
-          { "itemId": "Food_Dried", "status": "UNVERIFIED_HYPOTHESIS" },
-          { "itemId": "Water_Clean", "status": "UNVERIFIED_HYPOTHESIS" },
-          { "itemId": "Medicine_Herbs", "status": "UNVERIFIED_HYPOTHESIS" }
-        ]
-      },
-      {
-        "zoneId": "overworld_trader_outpost",
-        "type": "trade_zone",
-        "candidateDrops": []
-      }
+      { "zoneId": "overworld_pine_grove", "type": "resource_zone", "candidateDrops": [ { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" }, { "itemId": "Food_Dried", "status": "UNVERIFIED_HYPOTHESIS" }, { "itemId": "Cloth_Scrap", "status": "UNVERIFIED_HYPOTHESIS" } ] },
+      { "zoneId": "overworld_limestone_ridge", "type": "resource_zone", "candidateDrops": [ { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" }, { "itemId": "Gun_Oil", "status": "UNVERIFIED_HYPOTHESIS" } ] },
+      { "zoneId": "overworld_abandoned_farm", "type": "risk_zone", "candidateDrops": [ { "itemId": "Food_Dried", "status": "UNVERIFIED_HYPOTHESIS" }, { "itemId": "Water_Clean", "status": "UNVERIFIED_HYPOTHESIS" }, { "itemId": "Medicine_Herbs", "status": "UNVERIFIED_HYPOTHESIS" } ] },
+      { "zoneId": "overworld_trader_outpost", "type": "trade_zone", "candidateDrops": [] }
     ]
   },
   "firstVisitRequirements": {
@@ -109,6 +82,80 @@
       "approvedOption": "defer_until_measurement",
       "implementationAllowed": false
     }
+  },
+  "firstVisitStudyDefinition": {
+    "status": "RESEARCH_REQUIREMENTS_ONLY",
+    "zoneId": "overworld_pine_grove",
+    "purpose": "Define the measurements required to validate the first overworld loop without inventing yields, travel times, objective costs, or emergency supplies.",
+    "routeMeasurements": [
+      "Measure base exit to Pine Grove zone-load completion on foot without a sprint bonus.",
+      "Measure a route covering all first-visit hand-gatherable nodes and world-loot spawns without backtracking beyond zone bounds.",
+      "Measure Pine Grove exit to base entry, including overworld map traversal if applicable.",
+      "Record the complete exit + gather + return loop duration as the survival-drain basis.",
+      "Target no-combat gathering duration is under 10 minutes; this is a requirement, not a measured result."
+    ],
+    "resourceMeasurements": [
+      "Record scrap obtained during the first visit from world loot and gatherable nodes.",
+      "Measure repeatable scrap rate over a 30-minute loop using 2–3 timed runs.",
+      "Record whether food is present and its type and amount as observations, not final balance.",
+      "Record whether water is present and its observed amount, without finalizing a yield.",
+      "Record whether cloth is present and keep it separate from food, water, scrap, and oil.",
+      "Verify whether oil is absent or present; absence is an expectation to test, not a final value.",
+      "Record whether any node requires a tool. Any required tool must be found in the same zone and cannot be craft-gated for the first visit."
+    ],
+    "safetyMeasurements": [
+      "Preserve the requirement that the first visit is unarmed and has no mandatory combat.",
+      "Record threat types, movement speed, vision behavior, patrol or static behavior, and node-blocking frequency.",
+      "Record whether threats can be outrun or avoided and any stamina cost.",
+      "Record available avoidance routes, cover, and zone-edge escape options."
+    ],
+    "survivalMeasurements": [
+      "Calculate hunger loss as provisional hunger drain multiplied by measured total loop minutes.",
+      "Calculate thirst loss as provisional thirst drain multiplied by measured total loop minutes.",
+      "Evaluate remaining hunger and thirst from the provisional 80%/80% start after one complete loop.",
+      "Evaluate whether a second loop reaches zero before return; this informs, but does not decide, the emergency-cache question.",
+      "Use the current drain rates as provisional study inputs, not final balance values."
+    ],
+    "firstObjectiveMeasurements": [
+      "Define the required scrap for the broken workbench/storage foundation as a missing design input; do not invent it in this study.",
+      "Determine whether one or two first visits are expected after the required scrap value is approved.",
+      "Treat three or more required runs as a potential opening-grind risk requiring review, not as an automatic balance rule."
+    ],
+    "categories": {
+      "verifiedFindings": [
+        "The opening sequence is defined and committed.",
+        "The provisional 80%/80% state provides approximately 36 minutes of hunger and 28 minutes of thirst before reaching zero under the current provisional drain rates.",
+        "Backpack capacity 8 and loot reserve 3 remain provisional.",
+        "The camera foundation supports visibility of the player and gathering objectives.",
+        "Resources remain separate and there is no badge-to-resource conversion."
+      ],
+      "hypotheses": [
+        "Pine Grove can provide first-repair progress in one or two unarmed runs.",
+        "The player can avoid threats on the first visit through pathing.",
+        "Thirst may be the limiting need for a second trip."
+      ],
+      "missingMeasurements": [
+        "Base-to-Pine travel time.",
+        "First-visit gathering time.",
+        "Pine-to-base return time.",
+        "Scrap count on first visit.",
+        "Repeatable scrap rate.",
+        "Food and water presence.",
+        "Tool-gated nodes.",
+        "Threat and escape behavior.",
+        "Total hunger and thirst loss per loop.",
+        "Approved scrap requirement for the first objective.",
+        "One-run versus two-run requirement."
+      ],
+      "provisionalAssumptions": [
+        "80%/80% starting needs.",
+        "Backpack capacity 8 and loot reserve 3.",
+        "Hunger drain 2.222222 per minute and thirst drain 2.857143 per minute.",
+        "Fort clear times 12/15/18 minutes; not used as Pine Grove results."
+      ]
+    },
+    "feasibilityRecommendation": "CONDITIONALLY_FEASIBLE_PENDING_MEASUREMENTS",
+    "emergencyCacheDecision": "OPTION_D_DEFERRED_PENDING_YIELD_TRAVEL_AND_DRAIN_DATA"
   },
   "2_clearTimeMeasurements": {
     "combat": { "measure": "time to clear zone with enemies", "metric": "minutes" },
