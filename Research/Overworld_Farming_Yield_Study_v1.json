@@ -1,171 +1,203 @@
 {
   "meta": {
     "id": "Overworld_Farming_Yield_Study_v1",
-    "title": "Overworld Farming Yield Study v1",
-    "status": "STUDY_DRAFT_AWAITING_REVIEW",
-    "implementationAllowed": false,
-    "purpose": "Define the evidence and measurement structure needed to determine whether overworld preparation can sustain the Contested Fort economy.",
-    "reviewRequired": true,
-    "approvalTarget": "Research/Approved/Overworld_Farming_Yield_Study_v1.json"
-  },
-  "projectContinuity": {
-    "repository": "mkmulla19-boop/olomu-project-face2",
-    "projectPhase": "Research and design validation",
-    "unityImplementation": "Not authorized",
-    "workingMethod": "Work one file at a time. Keep research documents in Research/. Do not create Unity code, scenes, prefabs, ScriptableObjects, or gameplay implementation.",
-    "savedFiles": {
-      "README.md": "Project entry point.",
-      "Development/UNITY_AI_INSTRUCTIONS.md": "Instructions and restrictions for future Unity and AI development.",
-      "Research/Approved/Scarcity_Config_v3.3.json": "Approved scarcity, durability, survival, and resource configuration.",
-      "Research/Approved/Economy_Loop_Study_v1.json": "Approved-for-design economy and player-loop sustainability study; unresolved balance inputs remain deferred.",
-      "Research/Approved/AI_Handoff_Note.md": "Continuity instructions, current project state, verified findings, unresolved questions, and next-study order.",
-      "Research/Overworld_Farming_Yield_Study_v1.json": "This current draft, awaiting external review and not yet approved."
-    },
-    "authoritativeOrder": [
-      "Research/Approved/Scarcity_Config_v3.3.json",
-      "Research/Approved/Economy_Loop_Study_v1.json",
-      "Research/Overworld_Farming_Yield_Study_v1.json",
-      "Research/Approved/Death_Recovery_Finalization_Study_v1.json"
-    ],
-    "reviewerContext": "Any external reviewer, including Meta AI, must treat the two files under Research/Approved/ as the current approved design foundation, this file as an unapproved draft, and AI_Handoff_Note.md as continuity guidance."
-  },
-  "scope": {
-    "included": [
-      "Food yield from overworld activity",
-      "Water yield from overworld activity",
-      "Scrap yield from overworld activity",
-      "Repair-kit yield or source availability",
-      "Maintenance-item yield",
-      "Time required for each farming activity",
-      "Danger, interruption, and failure risk",
-      "Preparation capacity for Fort Floors 1, 2, and 3"
-    ],
-    "excluded": [
-      "Unity implementation",
-      "Final loot-table implementation",
-      "Final badge-to-resource conversion values",
-      "Final death and recovery rules",
-      "Changes to Pillar 2 or Pillar 3",
-      "Changes to Scarcity_Config_v3.3.json"
-    ]
-  },
-  "authoritativeReferences": [
-    "Research/Approved/Scarcity_Config_v3.3.json",
-    "Research/Approved/Economy_Loop_Study_v1.json",
-    "Research/Approved/AI_Handoff_Note.md"
-  ],
-  "currentKnownInputs": {
-    "foodDriedRestore": 25,
-    "waterCleanRestore": 30,
-    "hungerDrainPerMinute": 2.222222,
-    "thirstDrainPerMinute": 2.857143,
-    "fullClearConditionLoss": 40.5,
-    "repairRule": "Repair is per weapon. A full restore may require up to 3 discrete Repair_Kit_Basic uses when all three weapons require repair.",
-    "fortClearTimes": {
-      "status": "UNRESOLVED",
-      "provisionalValuesMinutes": {
-        "floor_1": 12,
-        "floor_2": 15,
-        "floor_3": 18
-      },
-      "note": "These are study assumptions only and are not authoritative values."
-    }
-  },
-  "studyQuestions": [
-    "How much food does an average player obtain during 30 minutes of overworld preparation?",
-    "How much water does an average player obtain during 30 minutes of overworld preparation?",
-    "How much scrap does an average player obtain during 30 minutes of overworld preparation?",
-    "Are repair kits obtained in the overworld, and at what reliable rate?",
-    "Which maintenance items are obtained in the overworld, and at what rate?",
-    "What time and travel cost is required to collect each resource?",
-    "What is the expected failure, interruption, or death risk during farming?",
-    "How much preparation is required to support one run on each Fort floor?",
-    "Does overworld farming make the intended Floor 1, Floor 2, and Floor 3 loop sustainable?"
-  ],
-  "measurementModel": {
-    "standardSessionMinutes": 30,
-    "requiredSamples": "Use a minimum of 3 comparable samples per activity when evidence becomes available. Record average, low, and high yield.",
-    "recordPerActivity": [
-      "activityId",
-      "locationOrSource",
-      "timeMinutes",
-      "foodItems",
-      "waterItems",
-      "scrapAmount",
-      "repairKits",
-      "maintenanceItems",
-      "travelCost",
-      "damageOrConditionCost",
-      "deathsOrFailedAttempts",
-      "notes"
-    ],
-    "yieldReporting": {
-      "average": "Expected yield per 30 minutes",
-      "low": "Conservative yield per 30 minutes",
-      "high": "Best-case yield per 30 minutes",
-      "confidence": "Mark each value as observed, defined by approved design, provisional estimate, or unknown."
-    }
-  },
-  "comparisonFramework": {
-    "targetRuns": [
-      "one Floor 1 run",
-      "one Floor 2 run",
-      "one Floor 3 run",
-      "one full three-floor clear"
-    ],
-    "compare": [
-      "food consumed versus food farmed",
-      "water consumed versus water farmed",
-      "condition loss versus repair-kit availability",
-      "scrap consumed versus scrap farmed",
-      "preparation time versus fort time",
-      "expected reward versus preparation cost",
-      "failure risk versus recovery capacity"
-    ],
-    "profitabilityStatus": "Do not label a floor profitable, break-even, or net-loss until resource values and conversion assumptions are explicitly defined."
-  },
-  "requiredOutputs": [
-    "Overworld resource source table",
-    "Average, conservative, and best-case yield per 30 minutes",
-    "Repair-kit availability classification",
-    "Preparation requirement for each Fort floor",
-    "Full-clear preparation requirement",
-    "Known risks and loss conditions",
-    "List of values still requiring approval"
-  ],
-  "openQuestions": [
-    "Repair-kit source and drop table",
-    "Scrap value and intended uses",
-    "Badge-to-resource conversion",
-    "Food_Stew role compared with Food_Dried",
-    "Water source and drop rate",
-    "Evidence-based Fort clear times",
-    "Whether overworld farming is safe, contested, or interruptible",
-    "Whether farming has stamina, travel, or time-window limits"
-  ],
-  "reviewInstructions": {
-    "requestedReviewer": "Meta AI",
-    "checkFor": [
-      "Incorrect assumptions against the approved scarcity and economy files",
-      "Missing resource categories or sources",
-      "Unclear measurement definitions",
-      "Premature balance claims",
-      "Contradictions with discrete repair rules",
-      "Whether this is the correct next study",
-      "Whether the saved-file context and approval boundaries are respected"
-    ],
-    "classificationRequired": [
-      "VERIFIED",
-      "NEEDS_CORRECTION",
-      "UNRESOLVED",
-      "NEXT_STUDY_RECOMMENDATION",
-      "IMPLEMENTATION_ALLOWED: false"
-    ]
-  },
-  "validation": {
-    "status": "DRAFT_ONLY",
+    "status": "NEEDS_CORRECTION_APPLIED_STUDY_DRAFT_AWAITING_REVIEW",
     "implementationAllowed": false,
     "approvedForDesign": false,
-    "approvedForUnity": false
-  }
+    "approvedForUnity": false,
+    "dependsOn": [
+      "Research/Approved/Scarcity_Config_v3.3.json",
+      "Research/Approved/Economy_Loop_Study_v1.json"
+    ],
+    "designRule": "Keep LDoE relationships, not exact LDoE values. External LDoE observations are not approved facts for our game.",
+    "rejectedPatterns": [
+      "badge_to_resource_conversion",
+      "fractional_repair_kit_pooling",
+      "treating_provisional_times_as_final"
+    ]
+  },
+  "confirmedFoundation": {
+    "verified": {
+      "fullFortClearConditionLoss": 40.5,
+      "repairIsPerWeaponDiscrete": true,
+      "maxRepairKitsForFullRestore": 3,
+      "badgeAvg": { "floor1": 11.5, "floor2": 21.5, "floor3": 32.5, "fullClear": 65.5 },
+      "crateSetCost": 95,
+      "clearRatioForCrateSet": 1.45,
+      "foodRestore": { "Food_Dried": 25 },
+      "waterRestore": { "Water_Clean": 30 },
+      "drainPerMinute": { "hunger": 2.222222, "thirst": 2.857143 }
+    },
+    "provisional": {
+      "fortClearTimesMinutes": { "floor1": 12, "floor2": 15, "floor3": 18, "status": "PROVISIONAL_ASSUMPTION_NOT_AUTHORITATIVE" },
+      "economyIntent": "Floor1 slightly profitable, Floor2 break-even, Floor3 net-loss without overworld prep — INTENT ONLY, not proven"
+    },
+    "unresolved": [
+      "overworld_food_yield",
+      "overworld_water_yield",
+      "scrap_yield",
+      "cloth_yield",
+      "oil_yield",
+      "repair_kit_source",
+      "maintenance_item_yield",
+      "fort_survival_drain_multiplier",
+      "Food_Stew_vs_Dried_balance",
+      "final_death_loss_value",
+      "overworld_danger_risk",
+      "food_needed_for_fort_clear",
+      "water_needed_for_fort_clear",
+      "condition_restore_per_kit"
+    ]
+  },
+  "studyGoals": [
+    "Determine food/water/scrap/cloth/oil yield per 30min overworld farming",
+    "Identify repair-kit and maintenance item sources",
+    "Measure time and risk for farming",
+    "Calculate preparation needed for each Fort floor",
+    "Validate whether intended economy loop is sustainable"
+  ],
+  "1_overworldZoneInventory": {
+    "purpose": "List all overworld sources that can drop resources — all drops are hypotheses until verified",
+    "zonesToInventory": [
+      {
+        "zoneId": "overworld_pine_grove",
+        "type": "resource_zone",
+        "candidateDrops": [
+          { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Food_Dried", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Cloth_Scrap", "status": "UNVERIFIED_HYPOTHESIS" }
+        ]
+      },
+      {
+        "zoneId": "overworld_limestone_ridge",
+        "type": "resource_zone",
+        "candidateDrops": [
+          { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Gun_Oil", "status": "UNVERIFIED_HYPOTHESIS" }
+        ]
+      },
+      {
+        "zoneId": "overworld_abandoned_farm",
+        "type": "risk_zone",
+        "candidateDrops": [
+          { "itemId": "Food_Dried", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Medicine_Herbs", "status": "UNVERIFIED_HYPOTHESIS" }
+        ]
+      },
+      {
+        "zoneId": "overworld_trader_outpost",
+        "type": "trade_zone",
+        "candidateDrops": []
+      }
+    ],
+    "invalidatedIdsRemoved": ["Food_Dried_Raw", "Water_Clean_Raw"],
+    "dataToCollectPerZone": ["lootTableIds", "nodeCount", "respawnTimer", "requiresTool"]
+  },
+  "2_clearTimeMeasurements": {
+    "combat": { "measure": "time to clear zone with enemies", "metric": "minutes", "includes": ["travel", "looting", "enemy_kills"] },
+    "noCombat": { "measure": "time to clear zone after enemies cleared", "metric": "minutes", "includes": ["travel", "looting_only"] },
+    "fortProvisionalReference": { "floor1": 12, "floor2": 15, "floor3": 18, "status": "PROVISIONAL_NOT_AUTHORITATIVE" }
+  },
+  "3_averageYieldPer30Min": {
+    "method": "Run 30min farming loop, 3 repetitions per zone type",
+    "separateResources": true,
+    "trackSeparately": {
+      "food": { "itemId": "Food_Dried", "restore": 25, "status": "VERIFIED" },
+      "water": { "itemId": "Water_Clean", "restore": 30, "status": "VERIFIED" },
+      "scrap": { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" },
+      "cloth": { "itemId": "Cloth_Scrap", "status": "UNVERIFIED_HYPOTHESIS" },
+      "oil": { "itemId": "Gun_Oil", "status": "UNVERIFIED_HYPOTHESIS" },
+      "detection": { "note": "not inventory item, tracks noise/visibility risk" }
+    }
+  },
+  "4_interruptionAndDangerTracking": {
+    "dangerTypes": ["patrol_detection", "cold_event", "infection_event", "weapon_jam_during_farm"],
+    "track": ["interruption_frequency_per_30min", "time_lost_per_interruption", "resource_lost", "escape_success_rate"]
+  },
+  "5_resourceSeparationRule": {
+    "rule": "Keep food, water, scrap, cloth, oil, detection as separate resources. Do not convert badges to resources.",
+    "rejected": "badge_to_resource_conversion"
+  },
+  "6_oneFortClearPreparationRequirements": {
+    "question": "What overworld farm is needed to support one full Fort 1-3 clear?",
+    "knownCostOfFullClear": {
+      "conditionLoss": 40.5,
+      "repairKitsNeededDiscrete": 3,
+      "foodNeeded": {
+        "status": "UNRESOLVED",
+        "reason": "Requires authoritative total fort duration and any survival-drain multiplier. 4 Food_Dried = 100 hunger restore; 5 Food_Dried = 125 hunger restore. Drain: 45min=100 hunger, 60min=133.3 hunger"
+      },
+      "waterNeeded": {
+        "status": "UNRESOLVED",
+        "reason": "Requires authoritative total fort duration and any survival-drain multiplier. 5 Water_Clean = 150 thirst restore. Drain: 45min=128.6 thirst, 60min=171.4 thirst"
+      }
+    },
+    "toCalculate": {
+      "scrapNeededFor3Kits": "UNRESOLVED — requires workbench recipe",
+      "clothNeededForRags": "UNRESOLVED",
+      "oilNeededForGunOil": "UNRESOLVED",
+      "farmRunsNeeded": "UNRESOLVED — zones per full clear"
+    }
+  },
+  "7_inventoryPressureTracking": {
+    "purpose": "Does farming fill lootReserve slots?",
+    "backpackRules": {
+      "lootReserveRequired": { "value": 3, "status": "PROVISIONAL", "reason": "Not yet explicitly defined in approved file, treat as provisional until verified in Scarcity_Config" },
+      "start": 8,
+      "basic": 12,
+      "military": 20
+    },
+    "track": ["slots_used_during_farm", "times_player_forced_to_drop", "spare_weapon_carry_impact"]
+  },
+  "8_farmingDeathAndRecoveryTracking": {
+    "overworldDeathBag": { "hypothesis": "same rule as fort — drops backpack not equipped", "status": "UNVERIFIED_HYPOTHESIS" },
+    "recoveryWindow": {
+      "fortMinutes": { "value": 30, "status": "PROVISIONAL", "unit": "minutes", "reason": "If assumption, mark provisional; requires verification from approved ContestedFort config" },
+      "overworldMinutes": { "value": null, "status": "UNRESOLVED", "unit": "minutes" }
+    },
+    "track": ["death_rate_per_30min_farm", "resource_loss_on_death", "time_to_recover"]
+  },
+  "9_repairKitSourceInvestigation": {
+    "currentStatus": "No reliable source in approved files",
+    "hypotheses": [
+      "workbench_craft_from_scrap_cloth_oil",
+      "rare_crate_roll",
+      "trader_trade"
+    ],
+    "questions": [
+      "Is kit craftable or only lootable?",
+      "What is scrap/cloth/oil cost per kit?",
+      "Is Gun_Oil and Cleaning_Rag craftable separately from kit?"
+    ],
+    "conditionRestorePerKit": {
+      "value": null,
+      "status": "UNRESOLVED",
+      "note": "Must be verified before being treated as authoritative. Previous 40 was not confirmed in current foundation."
+    },
+    "discreteRule": { "value": true, "status": "VERIFIED", "rule": "Repair kits are discrete per weapon, cannot be split" }
+  },
+  "10_followUpStudy": {
+    "id": "Maintenance_Workbench_Study_v1",
+    "status": "PLANNED_NOT_STARTED",
+    "dependsOn": "Overworld_Farming_Yield_Study_v1 results",
+    "scope": [
+      "Workbench tiers and unlocks",
+      "Repair_Kit_Basic recipe: scrap + cloth + oil requirements — UNRESOLVED",
+      "Cleaning_Rag and Gun_Oil crafting — UNRESOLVED",
+      "Condition restore per kit — UNRESOLVED, must be verified",
+      "Tool durability for farming nodes — UNRESOLVED"
+    ],
+    "implementationAllowed": false
+  },
+  "validationChecklist": [
+    "Zone drops marked as candidateDrops with UNVERIFIED_HYPOTHESIS",
+    "Food_Dried_Raw and Water_Clean_Raw removed",
+    "Food and water needed marked UNRESOLVED with drain calculations noted",
+    "Condition restore per kit marked UNRESOLVED",
+    "Dependencies corrected to Research/Approved paths",
+    "lootReserveRequired marked PROVISIONAL",
+    "Recovery window labeled fortMinutes with unit and PROVISIONAL status",
+    "No badge-to-resource conversion used",
+    "No provisional times treated as final"
+  ]
 }
