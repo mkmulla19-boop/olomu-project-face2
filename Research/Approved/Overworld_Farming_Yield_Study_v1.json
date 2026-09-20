@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "id": "Overworld_Farming_Yield_Study_v1",
+    "status": "APPROVED_FOR_DESIGN",
+    "implementationAllowed": false,
+    "approvedForDesign": true,
+    "approvedForUnity": false,
+    "dependsOn": [
+      "Research/Approved/Scarcity_Config_v3.3.json",
+      "Research/Approved/Economy_Loop_Study_v1.json"
+    ],
+    "designRule": "Keep LDoE relationships, not exact LDoE values. External LDoE observations are not approved facts for our game. This approval covers study structure and research direction only, not yield, recipe, timing, or balance values.",
+    "rejectedPatterns": [
+      "badge_to_resource_conversion",
+      "fractional_repair_kit_pooling",
+      "treating_provisional_times_as_final"
+    ]
+  },
+  "confirmedFoundation": {
+    "verified": {
+      "fullFortClearConditionLoss": 40.5,
+      "repairIsPerWeaponDiscrete": true,
+      "maxRepairKitsForFullRestore": 3,
+      "badgeAvg": { "floor1": 11.5, "floor2": 21.5, "floor3": 32.5, "fullClear": 65.5 },
+      "crateSetCost": 95,
+      "clearRatioForCrateSet": 1.45,
+      "foodRestore": { "Food_Dried": 25 },
+      "waterRestore": { "Water_Clean": 30 },
+      "drainPerMinute": { "hunger": 2.222222, "thirst": 2.857143 }
+    },
+    "provisional": {
+      "fortClearTimesMinutes": { "floor1": 12, "floor2": 15, "floor3": 18, "status": "PROVISIONAL_ASSUMPTION_NOT_AUTHORITATIVE" },
+      "economyIntent": "Floor1 slightly profitable, Floor2 break-even, Floor3 net-loss without overworld prep — INTENT ONLY, not proven"
+    },
+    "unresolved": [
+      "overworld_food_yield",
+      "overworld_water_yield",
+      "scrap_yield",
+      "cloth_yield",
+      "oil_yield",
+      "repair_kit_source",
+      "maintenance_item_yield",
+      "fort_survival_drain_multiplier",
+      "Food_Stew_vs_Dried_balance",
+      "final_death_loss_value",
+      "overworld_danger_risk",
+      "food_needed_for_fort_clear",
+      "water_needed_for_fort_clear",
+      "condition_restore_per_kit"
+    ]
+  },
+  "1_overworldZoneInventory": {
+    "purpose": "List all overworld sources that can drop resources — all drops are hypotheses until verified",
+    "zonesToInventory": [
+      {
+        "zoneId": "overworld_pine_grove",
+        "type": "resource_zone",
+        "candidateDrops": [
+          { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Food_Dried", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Cloth_Scrap", "status": "UNVERIFIED_HYPOTHESIS" }
+        ]
+      },
+      {
+        "zoneId": "overworld_limestone_ridge",
+        "type": "resource_zone",
+        "candidateDrops": [
+          { "itemId": "Res_ScrapMetal", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Gun_Oil", "status": "UNVERIFIED_HYPOTHESIS" }
+        ]
+      },
+      {
+        "zoneId": "overworld_abandoned_farm",
+        "type": "risk_zone",
+        "candidateDrops": [
+          { "itemId": "Food_Dried", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Water_Clean", "status": "UNVERIFIED_HYPOTHESIS" },
+          { "itemId": "Medicine_Herbs", "status": "UNVERIFIED_HYPOTHESIS" }
+        ]
+      },
+      {
+        "zoneId": "overworld_trader_outpost",
+        "type": "trade_zone",
+        "candidateDrops": []
+      }
+    ]
+  },
+  "2_clearTimeMeasurements": {
+    "combat": { "measure": "time to clear zone with enemies", "metric": "minutes" },
+    "noCombat": { "measure": "time to clear zone after enemies cleared", "metric": "minutes" },
+    "fortProvisionalReference": { "floor1": 12, "floor2": 15, "floor3": 18, "status": "PROVISIONAL_NOT_AUTHORITATIVE" }
+  },
+  "3_averageYieldPer30Min": {
+    "method": "Run 30min farming loop, 3 repetitions per zone type",
+    "separateResources": true,
+    "trackSeparately": ["food", "water", "scrap", "cloth", "oil", "detection"]
+  },
+  "4_interruptionAndDangerTracking": {
+    "dangerTypes": ["patrol_detection", "cold_event", "infection_event", "weapon_jam_during_farm"]
+  },
+  "5_resourceSeparationRule": {
+    "rule": "Keep food, water, scrap, cloth, oil, detection as separate resources. Do not convert badges to resources.",
+    "rejected": "badge_to_resource_conversion"
+  },
+  "6_oneFortClearPreparationRequirements": {
+    "knownCostOfFullClear": {
+      "conditionLoss": 40.5,
+      "repairKitsNeededDiscrete": 3,
+      "foodNeeded": { "status": "UNRESOLVED", "reason": "Requires authoritative total fort duration and survival-drain multiplier" },
+      "waterNeeded": { "status": "UNRESOLVED", "reason": "Requires authoritative total fort duration and survival-drain multiplier" }
+    }
+  },
+  "7_inventoryPressureTracking": {
+    "backpackRules": {
+      "lootReserveRequired": { "value": 3, "status": "PROVISIONAL" }
+    }
+  },
+  "8_farmingDeathAndRecoveryTracking": {
+    "recoveryWindow": {
+      "fortMinutes": { "value": 30, "status": "PROVISIONAL", "unit": "minutes" },
+      "overworldMinutes": { "value": null, "status": "UNRESOLVED" }
+    }
+  },
+  "9_repairKitSourceInvestigation": {
+    "conditionRestorePerKit": { "value": null, "status": "UNRESOLVED" },
+    "discreteRule": { "value": true, "status": "VERIFIED" }
+  },
+  "10_followUpStudy": {
+    "id": "Maintenance_Workbench_Study_v1",
+    "status": "PLANNED_NOT_STARTED",
+    "path": "Research/Maintenance_Workbench_Study_v1.json",
+    "implementationAllowed": false
+  }
+}
