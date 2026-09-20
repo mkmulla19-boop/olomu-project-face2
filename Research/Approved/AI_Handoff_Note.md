@@ -86,9 +86,67 @@ Floor 3: net-loss without overworld preparation
 
 This remains a design intention, not a mathematically proven final balance.
 
+## Opening foundation — approved design decisions
+
+These decisions define the opening structure only. They do not authorize Unity implementation and do not copy any external game's assets, UI, map, dialogue, or exact progression.
+
+### Character creation
+
+- Character creation occurs before the first playable home-base load.
+- Creation is minimal and should take less than 15 seconds.
+- Gender selection: Male / Female toggle.
+- Appearance: 4–6 head presets and 3 skin-tone swatches.
+- Appearance has no gameplay effect.
+- No class, attributes, perks, or starting advantage are selected during creation.
+- Player name is not required at first load.
+- An internal temporary identifier uses the form `Survivor_####`; it is not player-facing.
+- Player renaming is deferred to a later base setting.
+- Appearance changes may be available later through a base mirror/camp item after Floor 1; this is a later design feature, not part of first boot.
+
+### Spawn and first interaction
+
+- After creation, the player spawns inside the owned home base.
+- Spawn point: one tile south of the first base objective.
+- Facing direction: north, toward the broken workbench / storage foundation objective.
+- The camera should keep the character and first objective in view.
+- The first interaction is to examine the base objective and learn that scrap is needed to repair it.
+- The opening then directs the player toward `overworld_pine_grove` for initial resource preparation before returning to the base.
+
+### Starting-state design decision
+
+The following opening values are approved design decisions for the opening specification, not final balance claims:
+
+- Hunger: `80%`.
+- Thirst: `80%`.
+- Initial inventory: empty.
+- Backpack capacity: `8`.
+- Loot reserve: `3` slots, still marked provisional in the scarcity configuration.
+- Starting weapon: none.
+- No starting food or water is granted by character creation.
+
+The starting-state values must remain compatible with the authoritative scarcity configuration and may be revised if later validation shows a foundation conflict.
+
+### Opening sequence
+
+```text
+Load
+→ Minimal character creation
+→ Playable home base
+→ Spawn south of first objective, facing north
+→ Examine broken workbench / storage foundation
+→ Learn scrap is required
+→ Travel to overworld_pine_grove
+→ Gather initial resources
+→ Return to home base
+```
+
+This is an Olomu design structure informed by broad survival-game patterns, not a reproduction of another game's opening.
+
 ## Next study
 
-The next file should be created only after the user confirms:
+The approved opening foundation should be validated against the existing scarcity and economy foundation before beginning another study. No new study file is required for these opening decisions.
+
+The next research file remains deferred until the opening foundation is confirmed against the project structure:
 
 ```text
 Research/Approved/Overworld_Farming_Yield_Study_v1.json
@@ -125,16 +183,11 @@ Research/Approved/Death_Recovery_Finalization_Study_v1.json
 
 ## Last completed action
 
-`Economy_Loop_Study_v1.json` was committed to:
+The opening foundation decisions were added to this handoff note:
 
-```text
-Research/Approved/Economy_Loop_Study_v1.json
-```
+- minimal character creation
+- home-base spawn near the first objective
+- initial opening-state values
+- first interaction and outward resource loop
 
-Commit:
-
-```text
-fa3b5c7
-```
-
-The immediate next decision is whether to begin the Overworld Farming Yield Study.
+Unity implementation remains unauthorized.
