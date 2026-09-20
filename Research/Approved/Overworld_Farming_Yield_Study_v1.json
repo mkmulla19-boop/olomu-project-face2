@@ -9,7 +9,7 @@
       "Research/Approved/Scarcity_Config_v3.3.json",
       "Research/Approved/Economy_Loop_Study_v1.json"
     ],
-    "designRule": "Keep LDoE relationships, not exact LDoE values. External LDoE observations are not approved facts for our game. This approval covers study structure and research direction only, not yield, recipe, timing, or balance values.",
+    "designRule": "Keep LDoE relationships, not exact LDoE values. External LDoE observations are not approved facts for our game. This approval covers study structure and research direction only, not final yields or balance.",
     "rejectedPatterns": [
       "badge_to_resource_conversion",
       "fractional_repair_kit_pooling",
@@ -85,9 +85,35 @@
       }
     ]
   },
+  "firstVisitRequirements": {
+    "status": "REQUIREMENTS_ONLY_NOT_FINAL_BALANCE",
+    "zoneId": "overworld_pine_grove",
+    "requirements": [
+      "First visit must be completable unarmed.",
+      "Mandatory combat is not allowed during the first visit.",
+      "Initial resources must be hand-gatherable or world-lootable.",
+      "Target no-combat visit should remain under 10 minutes.",
+      "First run must provide measurable progress toward first base repair at the workbench/storage foundation.",
+      "Food and water availability in Pine Grove must be evaluated before finalizing the no-starting-food/no-starting-water rule.",
+      "Travel time and survival drain must be measured together to validate that the provisional 80%/80% start does not soft-lock."
+    ],
+    "feasibilityStatus": "CONDITIONALLY_FEASIBLE",
+    "hardConflict": false,
+    "softTensions": [
+      "The provisional 80%/80% start supports one short loop but may not support two consecutive loops without food or water.",
+      "The no-weapon start requires Pine Grove gathering to avoid mandatory combat and weapon-gated resources."
+    ],
+    "emergencyBaseFoodWater": {
+      "decision": "UNRESOLVED_PENDING_YIELD_STUDY",
+      "optionsReviewed": ["no_emergency_item", "emergency_water_only", "emergency_food_and_water", "defer_until_measurement"],
+      "approvedOption": "defer_until_measurement",
+      "implementationAllowed": false
+    }
+  },
   "2_clearTimeMeasurements": {
     "combat": { "measure": "time to clear zone with enemies", "metric": "minutes" },
     "noCombat": { "measure": "time to clear zone after enemies cleared", "metric": "minutes" },
+    "firstVisit": { "measure": "travel out + gather + travel back", "metric": "minutes", "status": "UNRESOLVED" },
     "fortProvisionalReference": { "floor1": 12, "floor2": 15, "floor3": 18, "status": "PROVISIONAL_NOT_AUTHORITATIVE" }
   },
   "3_averageYieldPer30Min": {

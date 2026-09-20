@@ -20,11 +20,11 @@ Olomu will eventually contain the following interconnected systems. These system
 12. **NPC AI** – Behaviour trees / state machines, schedules, and decision-making for non-player characters.
 13. **Animal AI** – Wildlife behaviour, ecosystems, and interaction with the player and environment.
 14. **Living World** – Systems that make the world continue existing beyond the player’s immediate attention.
-15. **Day/Night** – Time-of-day cycle and its effects on gameplay and atmosphere.
+15. **Day/Night** – Time-of-day cycle and its effects on gameplay and systems.
 16. **Weather** – Weather states and their influence on the world and systems.
 17. **Animation** – Animation controllers, blending, and procedural elements.
 18. **Audio** – Sound design architecture, spatial audio, and adaptive music.
-19. **VFX** – Visual effects pipeline and performance considerations.
+19. **VFX** – Visual effects pipeline, performance considerations.
 20. **Save / Progression** – Persistence of world state, player progress, and long-term consequences.
 21. **UI** – User interface architecture and data binding.
 22. **Story Engine** – The system that drives narrative responses from player actions and world state.
@@ -34,6 +34,23 @@ Olomu will eventually contain the following interconnected systems. These system
 26. **Consequences** – How choices and actions permanently or temporarily alter the world.
 27. **Environmental Storytelling** – Narrative delivered through the world itself rather than dialogue alone.
 28. **Optimization** – Performance targets, profiling strategy, and platform considerations.
+
+## Camera foundation — approved design only
+
+The camera decisions below define the intended player-facing structure. They do not authorize Unity implementation, camera values, scenes, prefabs, scripts, or input code.
+
+- Perspective: angled top-down / isometric-like view.
+- Follow: automatic player follow.
+- Rotation: not allowed for the player.
+- Free camera pan: not allowed.
+- Zoom: limited zoom in/out only.
+- Input pattern: pinch-style zoom is the intended mobile interaction pattern; exact input mapping remains for implementation planning.
+- Home base: permits a modestly wider maximum zoom-out than normal locations so the player can understand construction and keep the character and nearby objectives visible together.
+- Overworld: uses the standard limited zoom range.
+- Fort: uses the standard limited zoom range or a slightly tighter maximum view to preserve combat readability and avoid seeing outside the Fort.
+- Follow behavior remains consistent across home base, overworld, and Fort; no separate combat camera switch is approved.
+- The opening camera must keep the character and the first base objective visible together when the player spawns one tile south of it facing north.
+- Exact zoom limits, follow smoothing, camera height, angle, clipping, obstruction handling, and device-specific behavior remain unresolved.
 
 ## Guiding Principles
 
